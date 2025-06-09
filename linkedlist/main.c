@@ -93,7 +93,7 @@ int pushAtPos(struct Head *head, const int val,
   if (head == NULL) {
     return -1;
   }
-  if (pos < 1 || pos > head->size + 1) { // out of range
+  if (pos < 1 || pos > head->size + 1) { // Out of range
     return -1;
   }
   if (pos == 1) {
@@ -159,7 +159,7 @@ int modifyValue(struct Head *head, const int val, const int pos)
     return -1;
   }
   struct Node *aux = getNodeAtIndex(
-      head, pos); // since pos is already verified, i dont check it again
+      head, pos); // Since pos is already verified, i dont check it again
   aux->value = val;
   return 0;
 }
@@ -210,17 +210,17 @@ void freeList(struct Head *head)
 int main()
 {
   struct Head *head = initializeList();
-  pushAtbeginning(head, 2);  // add 2
-  pushAtbeginning(head, 5);  // add 5
-  pushAtbeginning(head, 3);  // add 3
-  pushAtEnd(head, 10);       // add 10 and the end
-  printList(head);           // 3 5 2 10
-  modifyValue(head, 100, 1); // 100 5 2 10
-  pushAtPos(head, 99, 2); // 100 99 5 2 10
-  printList(head);  // 100 99 5 2 10
-  if (contains(head, 10)) printf("True\n"); // True
-  deleteValueFromPos(head, 4);  // 100 99 5 10
-  printList(head);
+  pushAtbeginning(head, 2);                              // Add 2
+  pushAtbeginning(head, 5);                              // Add 5
+  pushAtbeginning(head, 3);                              // Add 3
+  pushAtEnd(head, 10);                                   // Add 10 and the end
+  printList(head);                                       // 3 5 2 10
+  modifyValue(head, 100, 1);                             // 100 5 2 10
+  pushAtPos(head, 99, 2);                                // 100 99 5 2 10
+  printList(head);                                       // 100 99 5 2 10
+  if (contains(head, 10)) printf("True\n");              // True
+  deleteValueFromPos(head, 4);                           // 100 99 5 10
+  printList(head);                                       // 100 99 5 10
   freeList(head);
   return 0;
 }
